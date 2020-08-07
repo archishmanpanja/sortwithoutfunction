@@ -1,0 +1,39 @@
+from random import randrange
+
+arr=[100,90,80,70,60,50,40,30,20,10,4,6,23,54,32,1]
+
+
+def sort(arr,posa,posb,posc):
+    new_sorted=sorted([arr[posa],arr[posb],arr[posc]])
+        
+        
+    return new_sorted[0],new_sorted[1],new_sorted[2]
+
+while arr!=sorted(arr):
+#for i in range(0,len(arr)*len(arr)):
+    posa=randrange(len(arr))
+    posb=randrange(len(arr))
+    posc=randrange(len(arr))
+    
+    if posa==posb or posa==posc or posc==posb:
+        continue
+    else:
+        sortedpos=sorted([posa,posb,posc])
+        sortedval=sort(arr,posa,posb,posc)
+
+        for i in range(0,3):
+            arr[sortedpos[i]]=sortedval[i]
+
+# if posa<=posb && posa<=posb:
+#     smallest=posa
+# elif posb<=posa && posb<=posc:
+#     samllest=posb
+# elif posc<=posa && posc<=posb:
+#     samllest=posc
+    
+
+print(arr)
+        
+
+
+
